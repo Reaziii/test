@@ -7,7 +7,6 @@ import GoogleSignInButton from "../components/ui/GoogleSignInButton";
 import { Button } from "@/components/ui/button";
 import Label from "@/components/ui/Label";
 import Link from "@/components/ui/Link";
-import CardBox from "@/components/ui/CardBox";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { Checkbox } from "@/components/ui/checkbox";
