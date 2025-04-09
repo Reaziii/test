@@ -4,11 +4,13 @@ import Body from "../components/Body";
 import * as Yup from "yup";
 import Header from "../components/Header";
 import GoogleSignInButton from "../components/ui/GoogleSignInButton";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import Label from "@/components/ui/Label";
 import Link from "@/components/ui/Link";
 import CardBox from "@/components/ui/CardBox";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Card } from "@/components/ui/card";
 
 const validationSchema = Yup.object({
@@ -29,26 +31,28 @@ export default function SignUp() {
     password: "",
     fullname: "",
   };
+  const navigate = useNavigate();
 
   return (
     <Body>
       <Header />
       <div className="flex items-center justify-center px-4 py-20">
-        <CardBox>
+        <Card className="max-w-md w-full p-10 rounded-3xl border">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-neutral-900">
+            <h2 className="text-3xl font-extrabold text-forground">
               Sign in to P2PShare
             </h2>
-            <p className="mt-2 text-sm text-neutral-500">
+            <p className="mt-2 text-sm text-forground">
               Welcome back. Let's build something amazing.
             </p>
           </div>
           <Formik
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(_, { setSubmitting }) => {
               setTimeout(() => {
                 toast("Account created successfully", {
                   duration: 1000,
                 });
+                navigate("/verify-email");
                 setSubmitting(false);
               }, 400);
             }}
@@ -68,7 +72,7 @@ export default function SignUp() {
                   <div className="space-y-4">
                     <div>
                       <Label
-                        className="block text-sm font-medium text-neutral-700"
+                        className="block text-sm font-medium text-forground"
                         htmlFor="fullname"
                       >
                         Full Name
@@ -86,7 +90,7 @@ export default function SignUp() {
                     </div>
                     <div>
                       <Label
-                        className="block text-sm font-medium text-neutral-700"
+                        className="block text-sm font-medium text-forground"
                         htmlFor="email"
                       >
                         Email address
@@ -103,7 +107,7 @@ export default function SignUp() {
                     <div>
                       <Label
                         htmlFor="password"
-                        className="block text-sm font-medium text-neutral-700"
+                        className="block text-sm font-medium text-forground"
                       >
                         Password
                       </Label>
@@ -118,6 +122,17 @@ export default function SignUp() {
                         value={values.password}
                         onChange={handleChange}
                       />
+                    </div>
+                    <div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox className="" id="terms" />
+                        <label
+                          htmlFor="terms"
+                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
+                          Accept terms and conditions
+                        </label>
+                      </div>
                     </div>
                   </div>
                   <Button
@@ -136,7 +151,7 @@ export default function SignUp() {
           <div className="text-center text-sm text-neutral-600">
             Already have an account? <Link to="/signin">Sign in</Link>
           </div>
-        </CardBox>
+        </Card>
       </div>
     </Body>
   );

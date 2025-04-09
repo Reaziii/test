@@ -76,38 +76,50 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+:root {
+  --background: hsl(198, 40%, 95%); /* rgb(224, 243, 250) */
+  --foreground: hsl(198, 5%, 10%); /* rgb(23, 27, 28) */
+  --card: hsl(198, 40%, 90%); /* rgb(204, 232, 242) */
+  --card-foreground: hsl(198, 5%, 15%); /* rgb(34, 40, 43) */
+  --popover: hsl(198, 40%, 95%); /* rgb(224, 243, 250) */
+  --popover-foreground: hsl(198, 95%, 10%); /* rgb(2, 51, 61) */
+  --primary: hsl(198, 81%, 55%); /* rgb(30, 161, 206) */
+  --primary-foreground: hsl(0, 0%, 100%); /* rgb(255, 255, 255) */
+  --secondary: hsl(198, 30%, 70%); /* rgb(143, 186, 204) */
+  --secondary-foreground: hsl(0, 0%, 0%); /* rgb(0, 0, 0) */
+  --muted: hsl(160, 30%, 85%); /* rgb(200, 221, 221) */
+  --muted-foreground: hsl(198, 5%, 35%); /* rgb(79, 93, 99) */
+  --accent: hsl(160, 30%, 80%); /* rgb(184, 211, 211) */
+  --accent-foreground: hsl(198, 5%, 15%); /* rgb(34, 40, 43) */
+  --destructive: hsl(0, 50%, 31%); /* rgb(79, 39, 39) */
+  --destructive-foreground: hsl(198, 5%, 90%); /* rgb(206, 220, 224) */
+  --border: hsl(198, 30%, 50%); /* rgb(94, 140, 159) */
+  --input: hsl(198, 30%, 31%); /* rgb(59, 87, 99) */
+  --ring: hsl(198, 81%, 55%); /* rgb(30, 161, 206) */
+  --radius: 0.5rem;
+}
+
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: hsl(198, 40%, 10%); /* rgb(13, 40, 51) */
+  --foreground: hsl(198, 5%, 90%); /* rgb(206, 217, 221) */
+  --card: hsl(198, 40%, 10%); /* rgb(13, 40, 51) */
+  --card-foreground: hsl(198, 5%, 90%); /* rgb(206, 217, 221) */
+  --popover: hsl(198, 40%, 5%); /* rgb(6, 20, 26) */
+  --popover-foreground: hsl(198, 5%, 90%); /* rgb(206, 217, 221) */
+  --primary: hsl(198, 81%, 55%); /* rgb(30, 161, 206) */
+  --primary-foreground: hsl(0, 0%, 100%); /* rgb(255, 255, 255) */
+  --secondary: hsl(198, 30%, 20%); /* rgb(30, 69, 82) */
+  --secondary-foreground: hsl(0, 0%, 100%); /* rgb(255, 255, 255) */
+  --muted: hsl(160, 30%, 25%); /* rgb(30, 64, 64) */
+  --muted-foreground: hsl(198, 5%, 60%); /* rgb(138, 163, 173) */
+  --accent: hsl(160, 30%, 25%); /* rgb(30, 64, 64) */
+  --accent-foreground: hsl(198, 5%, 90%); /* rgb(206, 217, 221) */
+  --destructive: hsl(0, 50%, 31%); /* rgb(79, 39, 39) */
+  --destructive-foreground: hsl(198, 5%, 90%); /* rgb(206, 217, 221) */
+  --border: hsl(198, 30%, 31%); /* rgb(59, 87, 99) */
+  --input: hsl(198, 30%, 31%); /* rgb(59, 87, 99) */
+  --ring: hsl(198, 81%, 55%); /* rgb(30, 161, 206) */
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -117,4 +129,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+button {
+  cursor: pointer;
 }

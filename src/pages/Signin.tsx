@@ -4,10 +4,10 @@ import Body from "../components/Body";
 import * as Yup from "yup";
 import Header from "../components/Header";
 import GoogleSignInButton from "../components/ui/GoogleSignInButton";
-import { Button } from "@/components/ui/Button";
 import Label from "@/components/ui/Label";
 import Link from "@/components/ui/Link";
-import CardBox from "@/components/ui/CardBox";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -28,9 +28,9 @@ export default function SignInPage() {
     <Body>
       <Header />
       <div className="flex items-center justify-center px-4 py-20">
-        <CardBox>
+        <Card className="max-w-md w-full p-10 rounded-3xl border">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-neutral-900">
+            <h2 className="text-3xl font-extrabold text-forground">
               Sign in to P2PShare
             </h2>
             <p className="mt-2 text-sm text-neutral-500">
@@ -57,7 +57,7 @@ export default function SignInPage() {
                   <div className="space-y-4">
                     <div>
                       <Label
-                        className="block text-sm font-medium text-neutral-700"
+                        className="block text-sm font-medium text-forground"
                         htmlFor="email"
                       >
                         Email address
@@ -74,7 +74,7 @@ export default function SignInPage() {
                     <div>
                       <Label
                         htmlFor="password"
-                        className="block text-sm font-medium text-neutral-700"
+                        className="block text-sm font-medium text-forground"
                       >
                         Password
                       </Label>
@@ -112,7 +112,7 @@ export default function SignInPage() {
           <div className="text-center text-sm text-neutral-600">
             Don't have an account? <Link to="/signup">Register here</Link>
           </div>
-        </CardBox>
+        </Card>
       </div>
     </Body>
   );

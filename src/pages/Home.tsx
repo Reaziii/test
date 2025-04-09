@@ -1,11 +1,13 @@
-import { Button } from "@/components/ui/Button"
+import Body from "@/components/Body";
+import Header from "@/components/Header";
+import React from "react";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh">
-      <Button>Click me</Button>
-    </div>
-  )
-}
+    <Body>
+      <Header/>
+    </Body>
+  );
+};
 
-export default App
+export default App;

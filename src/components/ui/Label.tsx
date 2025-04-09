@@ -4,7 +4,7 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
 }
 const Label:FC<LabelProps> = ({children, ...rest}) => {
   return (
-    <label className="block text-sm font-medium text-neutral-700" {...rest}>
+    <label className="block text-sm font-medium text-forground" {...rest}>
         {children}
     </label>
   );
